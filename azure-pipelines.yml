@@ -16,12 +16,7 @@ steps:
     outputType: 'Process'
     orchestratorConnection: 'VDSCP'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-- task: UiPathAssets@5
-  inputs:
-    orchestratorConnection: 'VDSCP'
-    folderName: 'CICD'
-    assetActionType: 'Deploy'
-    csvFile: 'assetfile.csv'
+
 - task: PublishBuildArtifacts@1
   inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
