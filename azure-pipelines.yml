@@ -27,3 +27,11 @@ steps:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
         ArtifactName: 'Demo'
         publishLocation: 'Container'
+
+- task: UiPathDeploy@5
+  inputs:
+    orchestratorConnection: 'VDSCP'
+    packagesPath: '$(Build.ArtifactStagingDirectory)'
+    ignoreLibraryDeployConflict: true
+    folderName: 'CICD'
+    traceLevel: 'Verbose'
